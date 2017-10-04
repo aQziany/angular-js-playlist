@@ -5,10 +5,16 @@
     <link href="content/css/styles.css" rel="stylesheet" />
     <script src="app\lib\angular.min.js"></script>
   </head>
-  <body ng-init="color='orange'">
+  <body ng-init="ninjas=['yoshi' , 'crystal' , 'ryu' , 'shaun']">
     <!-- ng-model is an angular js build-in directive -->
     <input type="text" ng-model="favMeat" placeholder="enter your fave meat" name="" value="">
-    <p class="{{color}}">hello dudes</p>
+
+    <ul>
+      <li>{{ninjas[0]}}</li>
+      <li>{{ninjas[1]}}</li>
+      <li>{{ninjas[2]}}</li>
+      <li>{{ninjas[3]}}</li>
+    </ul>
 
 
   </body>
