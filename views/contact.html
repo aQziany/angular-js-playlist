@@ -1,5 +1,5 @@
 <div class="content">
-  <form name="contactForm" novalidate> <!-- don't validate from html5 -->
+  <form name="contactForm" ng-submit="sendMessage()" novalidate> <!-- don't validate from html5 -->
     <input type="text" placeholder="name" name="name" ng-model="contact.name" ng-required="true"/>
     <!--
       $pristine - {{contactForm.name.$pristine}},
