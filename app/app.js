@@ -18,7 +18,7 @@ myNinjaApp.config(['$routeProvider', function($routeProvider){
 }]);
 
 // all the code that controlls the section for this controller
-myNinjaApp.controller('NinjaController', ['$scope' , function($scope){
+myNinjaApp.controller('NinjaController', ['$scope' , '$http' , function($scope, $http){
 // protect scope for minify code
 
   $scope.removeNinja = function(ninja) {
@@ -40,39 +40,17 @@ myNinjaApp.controller('NinjaController', ['$scope' , function($scope){
     $scope.newninja.rate = "";
   };
 
-  // $scope.message = "hey y'all";
-  // $scope.ninjas = ['yoshi', 'crystal', 'ryu', 'shaun'];
+  /* old way of doing
+  $http.get('data/ninjas.json').success(function(data){
+    $scope.ninjas = data;
+  });
+  */
 
-  // array of objects
-  $scope.ninjas = [
-    {
-      name: "Yoshi",
-      belt: "green",
-      rate: 50,
-      available: true,
-      thumb: "http://placehold.it/50x50/666666/ffffff"
-    },
-    {
-      name: "Crystal",
-      belt: "yellow",
-      rate: 30,
-      available: true,
-      thumb: "http://placehold.it/50x50/666666/ffffff"
-    },
-    {
-      name: "Ryu",
-      belt: "orange",
-      rate: 10,
-      available: false,
-      thumb: "http://placehold.it/50x50/666666/ffffff"
-    },
-    {
-      name: "Shaun",
-      belt: "black",
-      rate: 1000,
-      available: true,
-      thumb: "http://placehold.it/50x50/666666/ffffff"
-    }
-  ];
+  $http.get('data/ninjas.json').then(function(response){
+      $scope.ninjas = response.data;
+});
+
+  // transform this into json
+  // console.log(angular.toJson($scope.ninjas));
 
 }]);
