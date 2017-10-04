@@ -3,10 +3,13 @@
   <head>
     <title>TheNetNinja Angular Playlist</title>
     <link href="content/css/styles.css" rel="stylesheet" />
-    <script type="text/javascript" src="app\lib\angular.min.js"></script>
+    <script src="app\lib\angular.min.js"></script>
   </head>
-  <body>
+  <body ng-init="numbers=[1,2,3,4]">
+    <!-- ng-model is an angular js build-in directive -->
     <input type="text" ng-model="favMeat" placeholder="enter your fave meat" name="" value="">
-    <p>Your fave meat is: {{favMeat}}</p>
+    <p>{{numbers[0] + numbers[3]}}</p>
+
+
   </body>
 </html>
