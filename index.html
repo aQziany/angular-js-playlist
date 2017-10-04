@@ -9,10 +9,15 @@
   <body>
     <div ng-controller="NinjaController">
       <h1>{{message}}</h1>
+      <input type="text" ng-model="search" name="" value="">
       <ul>
-        <li ng-repeat="ninja in ninjas">{{ninja}}</li>
+                            <!-- pipe, filter, orderBy, search -->
+        <li ng-repeat="ninja in ninjas | orderBy:'-name' | filter: search">
+          {{ninja.name}} - {{ninja.rate | currency: 'E'}} <!-- this filtre is concern of how only this is displayed -->
+        </li>
+
       </ul>
-      
+
     </div>
   </body>
 </html>
