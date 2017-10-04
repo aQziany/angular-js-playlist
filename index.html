@@ -26,6 +26,8 @@
         <ul>
                               <!-- pipe, filter, orderBy, search -->
           <li ng-repeat="ninja in ninjas | orderBy: order | filter: search" ng-show="ninja.available"> <!-- ! ng-hide-->
+            <img ng-src="{{ninja.thumb}}" alt="" style="margin: -12px 10px 0 0; float:left; width:50px;"
+            ng-show="ninja.thumb" />
             <h3>{{ninja.name}} - {{ninja.rate | currency: 'E'}}</h3> <!-- this filtre is concern of how only this is displayed -->
             <div class="remove" ng-click="removeNinja(ninja)">X</div>
             <span class="belt" style="background:{{ninja.belt}}">{{ninja.belt}} belt</span>

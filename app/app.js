@@ -33,25 +33,29 @@ myNinjaApp.controller('NinjaController', ['$scope' , function($scope){
       name: "Yoshi",
       belt: "green",
       rate: 50,
-      available: true
+      available: true,
+      thumb: "http://placehold.it/50x50/666666/ffffff"
     },
     {
       name: "Crystal",
       belt: "yellow",
       rate: 30,
-      available: true
+      available: true,
+      thumb: "http://placehold.it/50x50/666666/ffffff"
     },
     {
       name: "Ryu",
       belt: "orange",
       rate: 10,
-      available: false
+      available: false,
+      thumb: "http://placehold.it/50x50/666666/ffffff"
     },
     {
       name: "Shaun",
       belt: "black",
       rate: 1000,
-      available: true
+      available: true,
+      thumb: "http://placehold.it/50x50/666666/ffffff"
     }
   ];
 
