@@ -2,7 +2,9 @@
 var myNinjaApp = angular.module('myNinjaApp', ['ngRoute', 'ngAnimate']);
 // routing dependency, use the route library
 
-myNinjaApp.config(['$routeProvider', function($routeProvider){
+myNinjaApp.config(['$routeProvider', '$locationProvider' ,function($routeProvider, $locationProvider){
+
+  $locationProvider.html5Mode(true);  
 
   $routeProvider
     .when('/home', {
