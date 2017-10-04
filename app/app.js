@@ -1,5 +1,5 @@
 // module name
-var myNinjaApp = angular.module('myNinjaApp', ['ngRoute']);
+var myNinjaApp = angular.module('myNinjaApp', ['ngRoute', 'ngAnimate']);
 // routing dependency, use the route library
 
 myNinjaApp.config(['$routeProvider', function($routeProvider){
