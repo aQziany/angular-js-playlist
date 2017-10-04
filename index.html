@@ -7,6 +7,13 @@
     <script src="app/app.js"></script>
   </head>
   <body>
+
+    <!-- directive as an html element / tag
+    <ng-include src="'header.html'"></ng-include>-->
+
+    <!-- directive as attribute -->
+    <header ng-include="'header.html'"></header>
+
     <div ng-controller="NinjaController">
       <h1>{{message}}</h1>
       <input type="text" ng-model="search" name="" value="">
@@ -15,9 +22,8 @@
         <li ng-repeat="ninja in ninjas | orderBy:'-name' | filter: search">
           {{ninja.name}} - {{ninja.rate | currency: 'E'}} <!-- this filtre is concern of how only this is displayed -->
         </li>
-
       </ul>
-
     </div>
+
   </body>
 </html>
