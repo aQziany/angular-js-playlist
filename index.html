@@ -31,6 +31,14 @@
             <span class="belt" style="background:{{ninja.belt}}">{{ninja.belt}} belt</span>
           </li>
         </ul>
+
+        <form ng-submit="addNinja()" class="" >
+          <input type="text" placeholder="name" ng-model="newninja.name">
+          <input type="text" placeholder="belt" ng-model="newninja.belt">
+          <input type="text" placeholder="rate"  ng-model="newninja.rate">
+          <input type="submit" value="Add new ninja">
+        </form>
+
       </div>
     </div>
 

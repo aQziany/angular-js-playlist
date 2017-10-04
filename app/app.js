@@ -10,6 +10,20 @@ myNinjaApp.controller('NinjaController', ['$scope' , function($scope){
     $scope.ninjas.splice(removeNinja, 1) // javascript methode
   }
 
+  // ninja object
+  $scope.addNinja = function() {
+    $scope.ninjas.push({ // javascript push method
+      name: $scope.newninja.name,
+      belt: $scope.newninja.belt,
+      rate: parseInt($scope.newninja.rate),
+      available: true
+    });
+
+    $scope.newninja.name = "";
+    $scope.newninja.belt = "";
+    $scope.newninja.rate = "";
+  };
+
   // $scope.message = "hey y'all";
   // $scope.ninjas = ['yoshi', 'crystal', 'ryu', 'shaun'];
 
