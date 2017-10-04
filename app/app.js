@@ -5,6 +5,11 @@ var myNinjaApp = angular.module('myNinjaApp', []);
 myNinjaApp.controller('NinjaController', ['$scope' , function($scope){
 // protect scope for minify code
 
+  $scope.removeNinja = function(ninja) {
+    var removeNinja = $scope.ninjas.indexOf(ninja); // javascript function
+    $scope.ninjas.splice(removeNinja, 1) // javascript methode
+  }
+
   // $scope.message = "hey y'all";
   // $scope.ninjas = ['yoshi', 'crystal', 'ryu', 'shaun'];
 
