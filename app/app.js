@@ -6,7 +6,8 @@ myNinjaApp.config(['$routeProvider', function($routeProvider){
 
   $routeProvider
     .when('/home', {
-      templateUrl: 'views/home.html'
+      templateUrl: 'views/home.html',
+      controller: 'NinjaController'
     })
     .when('/directory', {
       templateUrl: 'views/directory.html',
@@ -16,6 +17,23 @@ myNinjaApp.config(['$routeProvider', function($routeProvider){
     })
 
 }]);
+
+
+myNinjaApp.directive('randomNinja', [function(){
+  return {
+    restrict: 'E', // restrict the directive
+    scope: {
+      ninjas: '=',
+      title: '='
+    },
+    // template: '<img ng-src="{{ninjas[random].thumb}}"/>',
+    templateUrl: 'views/random.html',
+    controller: function($scope){
+      $scope.random = Math.floor(Math.random() * 4);
+    }
+  };
+}]);
+
 
 // all the code that controlls the section for this controller
 myNinjaApp.controller('NinjaController', ['$scope' , '$http' , function($scope, $http){
